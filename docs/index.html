@@ -75,6 +75,8 @@
     var div = document.getElementById('status'),
         user = document.getElementById('channel').value;
 
+    div.innerHTML = '<em>Getting ' + user + '\'s streaming status...</em>';
+    
     TwitchLiveChecker.getUser(user, function (status) {
       div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
 
@@ -83,7 +85,7 @@
         var player = new Twitch.Player('stream', {
           height: 191,
           width: 340,
-          channel: name,
+          channel: user,
           muted: false,
           autoplay: true,
           allowfullscreen : true,
@@ -112,6 +114,8 @@
         var div = document.getElementById('status'),
             user = document.getElementById('channel').value;
         
+        div.innerHTML = '<em>Getting ' + user + '\'s streaming status...</em>';
+        
         TwitchLiveChecker.getUser(user, function (status) {
           div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
           
@@ -120,7 +124,7 @@
             var player = new Twitch.Player('stream', {
               height: 191,
               width: 340,
-              channel: name,
+              channel: user,
               muted: false,
               autoplay: true,
               allowfullscreen : true,

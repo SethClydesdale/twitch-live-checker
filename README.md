@@ -3,9 +3,15 @@ Twitch Live Checker is a helper function for checking if a user is streaming liv
 
 -----
 
+**Quick Links**
+- [How to Install](#how-to-install)
+- [How to Use](#how-to-use)
+- [Preset Embed Codes](#preset-embed-codes)
+- [TwitchLiveChecker Documentation](#twitchlivechecker-documentation)
+
 ### How to Install
 
-Simply include **twitch-live-checker.js** in the `<head>` section of your website and you're good to go!
+Simply include [**twitch-live-checker.js**](https://github.com/SethClydesdale/twitch-live-checker/blob/main/twitch-live-checker.js) in the `<head>` section of your website and you're good to go!
 
 
 ### How to Use
@@ -38,11 +44,11 @@ window.addEventListener('load', function () {
 });
 ```
 
-#### Preset Embed Codes
+### Preset Embed Codes
 
 Below are some preset codes that you can copy and use on your website to embed your stream, a notification, etc.
 
-##### Embed Your Twitch Stream Only When You're Live
+#### Embed Your Twitch Stream Only When You're Live
 Copy the code below to where you want to show your livestream whenever you go live. Simply replace `NAME` with your Twitch username and you're all set! You can also customize the options for the frame, below the `name` variable. Please see Twitch's documentation for the embed options [here](https://dev.twitch.tv/docs/embed/everything/#embed-parameters).
 
 You can also edit the `offlineMessage` message variable if you want to change the message or remove it completely. To remove it completely, simply leave it blank, like this: `offlineMessage = ''`. The special `${USERNAME}` variable can be used in your message to place your name wherever you like in it. This name is the same name you input into the `name` variable.
@@ -74,7 +80,7 @@ You can also edit the `offlineMessage` message variable if you want to change th
 **NOTE:** If you're applying this code after page load, you can remove the `window.addEventListener` wrapper function.
 
 
-##### Show a Notifcation Whenever You Go Live on Twitch
+#### Show a Notifcation Whenever You Go Live on Twitch
 Copy this code to wherever you want to show a notification when you're live on twitch. Replace `NAME` with your Twitch username. After this, you can modify the `onlineMessage` and `offlineMessage` variables to change the message that is displayed. If you only want to show a message when you're live, simply leave `offlineMessage` blank like this: `offlineMessage = ''`. You can use the special `${USERNAME}` variable in these messages to put your name wherever you like.
 ```html
 <div id="myStreamNotif"></div>

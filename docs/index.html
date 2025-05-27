@@ -43,7 +43,7 @@
   <body>
     
     <header>
-      <h1 id="site-title"><a href="./" id="home-link">Seth's GitHub Pages</a></h1>
+      <h1 id="site-title"><a href="../" id="home-link">Seth's GitHub Pages</a></h1>
       <a id="fork-me" href="https://github.com/SethClydesdale/sethclydesdale.github.io">Fork Me</a>
     </header>
     
@@ -76,12 +76,12 @@
         user = document.getElementById('channel').value;
 
     div.innerHTML = '<em>Getting ' + user + '\'s streaming status...</em>';
+    document.getElementById('stream').innerHTML = '';
     
     TwitchLiveChecker.getUser(user, function (status) {
       div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
 
       if (status == 'online') {
-        document.getElementById('stream').innerHTML = '';
         var player = new Twitch.Player('stream', {
           height: 191,
           width: 340,
@@ -100,8 +100,8 @@
     
     <footer class="clear">
       <ul class="footer-left">
-        <li><a href="./">Home</a></li>
-        <li><a href="privacy/">Privacy</a></li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
       </ul>
       
       <ul class="footer-right">
@@ -115,12 +115,12 @@
             user = document.getElementById('channel').value;
         
         div.innerHTML = '<em>Getting ' + user + '\'s streaming status...</em>';
+        document.getElementById('stream').innerHTML = '';
         
         TwitchLiveChecker.getUser(user, function (status) {
           div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
           
           if (status == 'online') {
-            document.getElementById('stream').innerHTML = '';
             var player = new Twitch.Player('stream', {
               height: 191,
               width: 340,

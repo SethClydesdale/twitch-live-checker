@@ -1,6 +1,8 @@
 ﻿# Twitch Live Checker
 Twitch Live Checker is a helper function for checking if a user is streaming live on Twitch or not. You can view a demo of it in action [here](https://sethclydesdale.github.io/twitch-live-checker/).
 
+<img src="docs/demo.gif" height="200">
+
 -----
 
 **Quick Links**
@@ -47,6 +49,10 @@ window.addEventListener('load', function () {
 ### Preset Embed Codes
 
 Below are some preset codes that you can copy and use on your website to embed your stream, a notification, etc.
+
+- [Embed Your Twitch Stream Only When You're Live](#embed-your-twitch-stream-only-when-youre-live)
+- [Show a Notifcation Whenever You Go Live on Twitch](#show-a-notifcation-whenever-you-go-live-on-twitch)
+
 
 #### Embed Your Twitch Stream Only When You're Live
 Copy the code below to where you want to show your livestream whenever you go live. Simply replace `NAME` with your Twitch username and you're all set! You can also customize the options for the frame, below the `name` variable. Please see Twitch's documentation for the embed options [here](https://dev.twitch.tv/docs/embed/everything/#embed-parameters).

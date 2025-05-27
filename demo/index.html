@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>Twitch Live Checker Demo | Seth's GitHub Pages</title>
+    <meta name="title" content="Twitch Live Checker Demo | Seth's GitHub Pages">
+    <meta name="twitter:title" content="Twitch Live Checker Demo | Seth's GitHub Pages">
+    <meta property="og:title" content="Twitch Live Checker Demo | Seth's GitHub Pages">
+    <meta name="description" content="Check if a user is live on Twitch or not!">
+    <meta property="og:description" content="Check if a user is live on Twitch or not!">
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/main.ico">
+
+    <meta name="keywords" content="Twitch" lang="en">
+    <meta name="language" content="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:site_name" content="sethclydesdale.github.io">
+    <meta property="og:url" content="https://sethclydesdale.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sethclydesdale.github.io/resources/images/main-sq.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@SethC1995">
+
+    <link rel="stylesheet" href="resources/stylesheet.min.css">
+    <script src="resources/twitch-live-checker.js" async></script>
+    <script src="resources/ga.js" async></script>
+    <style>
+      .content-block { max-width:1000px; }
+      code {
+        color:#39C;
+        font-family:courier new, courier, monospace;
+        background:#EEE;
+        border:1px solid #CCC;
+        display:inline-block;
+        padding:5px;
+      }
+      #github-link { background:#96f; }
+      #github-link:hover { background:#85E; }
+      #github-link:focus, #github-link:active { background:#74D; }
+    </style>
+  </head>
+
+  <body>
+    
+    <header>
+      <h1 id="site-title"><a href="./" id="home-link">Seth's GitHub Pages</a></h1>
+      <a id="fork-me" href="https://github.com/SethClydesdale/sethclydesdale.github.io">Fork Me</a>
+    </header>
+    
+    <div id="content">
+      <div class="content-block center">
+        <h2 id="main-title" class="title">Twitch Live Checker Demo</h2>
+        <p id="main-paragraph">Twitch Live Checker is a helper function for checking if a user is streaming live on Twitch or not. Try it yourself below or visit the GitHub repo to learn more!</p>
+        <a href="https://github.com/SethClydesdale/twitch-live-checker" class="button" id="github-link"><i class="fa">&#xf09b;</i> Learn more on GitHub</a>
+      </div>
+      
+      <div class="content-block">
+        <h2 class="section-title" id="demo">Demo</h2>
+        <br>
+        <div class="center">
+          <code>TwitchLiveChecker.getUser('<input id="channel" type="text" value="SethC95" style="width:100px;">')</code><button class="button" onclick="checkStatus();"><i class="fa">&#xf04b;</i> Run!</button><br><br>
+          <div id="status" style="font-size:18px; min-height:20px;"></div><br>
+          <div id="stream" style="min-height:191px;"></div>
+        </div>
+      </div>
+        
+      <div class="content-block">
+        <h2 class="section-title" id="demo-code">Demo Code</h2>
+        <br>
+        <textarea style="width:80%;height:200px;resize:none;" onfocus="this.select();" readonly>
+<code>TwitchLiveChecker.getUser('<input id="channel" type="text" value="SethC95" style="width:100px;">')</code><button class="button" onclick="checkStatus();"><i class="fa">&#xf04b;</i> Run!</button><br><br>
+<div id="status" style="font-size:18px; min-height:20px;"></div><br>
+<div id="stream" style="min-height:191px;"></div>
+<script>window.checkStatus = function () {
+    var div = document.getElementById('status'),
+        user = document.getElementById('channel').value;
+
+    TwitchLiveChecker.getUser(user, function (status) {
+      div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
+
+      if (status == 'online') {
+        document.getElementById('stream').innerHTML = '';
+        var player = new Twitch.Player('stream', {
+          height: 191,
+          width: 340,
+          channel: name,
+          muted: false,
+          autoplay: true,
+          allowfullscreen : true,
+          parent: [window.location.host]
+        });
+      }
+    });
+  };</script>
+        </textarea><br>
+      </div>
+    </div>
+    
+    <footer class="clear">
+      <ul class="footer-left">
+        <li><a href="./">Home</a></li>
+        <li><a href="privacy/">Privacy</a></li>
+      </ul>
+      
+      <ul class="footer-right">
+        <li>Created by <a href="https://github.com/SethClydesdale">Seth Clydesdale</a></li>
+      </ul>
+    </footer>
+  
+    <script src="resources/javascript.min.js"></script>
+    <script>window.checkStatus = function () {
+        var div = document.getElementById('status'),
+            user = document.getElementById('channel').value;
+        
+        TwitchLiveChecker.getUser(user, function (status) {
+          div.innerHTML = '<a href="https://www.twitch.tv/' + user + '" target="_blank">' + user + '</a> is currently <strong style="color:' + (status == 'online' ? 'green' : 'red') + ';">' + status + '</strong>.';
+          
+          if (status == 'online') {
+            document.getElementById('stream').innerHTML = '';
+            var player = new Twitch.Player('stream', {
+              height: 191,
+              width: 340,
+              channel: name,
+              muted: false,
+              autoplay: true,
+              allowfullscreen : true,
+              parent: [window.location.host]
+            });
+          }
+        });
+      };</script>
+  </body>
+</html>

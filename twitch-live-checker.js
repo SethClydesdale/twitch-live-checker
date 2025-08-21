@@ -33,7 +33,7 @@
       stream.style.display = 'none';
       document.body.appendChild(stream);
       
-      var player = new Twitch.Player("TwitchLiveChecker_stream-" + name, options);
+      var player = new Twitch.Embed("TwitchLiveChecker_stream-" + name, options);
 
       // offline
       player.addEventListener(Twitch.Player.OFFLINE, function () {
